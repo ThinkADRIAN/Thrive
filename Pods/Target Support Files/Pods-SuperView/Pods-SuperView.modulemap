@@ -1,0 +1,6 @@
+framework module Pods_SuperView {
+  umbrella header "Pods-SuperView-umbrella.h"
+
+  export *
+  module * { export * }
+}

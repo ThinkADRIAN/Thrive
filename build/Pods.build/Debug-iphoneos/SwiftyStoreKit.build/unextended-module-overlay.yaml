@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/adriancunanan/Desktop/***/ThriveWiz/Zeroqode Ios & Android/Zeroqode Ios/Product/SuperView/SuperView/SuperView/build/Debug-iphoneos/SwiftyStoreKit/SwiftyStoreKit.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/adriancunanan/Desktop/***/ThriveWiz/Zeroqode Ios & Android/Zeroqode Ios/Product/SuperView/SuperView/SuperView/build/Pods.build/Debug-iphoneos/SwiftyStoreKit.build/unextended-module.modulemap',
+    }]
+  }]
+}
