@@ -5,17 +5,17 @@
 	<key>URL</key>
 	<string>https://thrivewiz.com</string>
 	<key>Toolbar</key>
-	<true/>
+	<false/>
 	<key>AdMobBannerUnitId</key>
-	<string>ca-app-pub-5514315741534690/3580595564</string>
+	<string></string>
 	<key>AdMobInterstitialUnitId</key>
-	<string>ca-app-pub-5514315741534690/5057328761</string>
+	<string></string>
 	<key>OneSignalAppID</key>
-	<string>ec291a7f-c387-4c06-a37e-34b0b24d97bf</string>
+	<string></string>
 	<key>ShowInterstitialInSecoundsEvery</key>
 	<string>60</string>
 	<key>RemoveAdsPurchaseId</key>
-	<string>com.brommko.universalwebview.removeads</string>
+	<string></string>
 	<key>AppIdAssignedFromApple</key>
 	<string>1200056404</string>
 	<key>PullToRefresh</key>
