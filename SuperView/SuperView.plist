@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>URL</key>
-	<string>https://thrivewiz.com</string>
+	<string>https://thriveoriginal.com/version-test/</string>
 	<key>Toolbar</key>
 	<false/>
 	<key>AdMobBannerUnitId</key>
@@ -11,7 +11,7 @@
 	<key>AdMobInterstitialUnitId</key>
 	<string></string>
 	<key>OneSignalAppID</key>
-	<string></string>
+	<string>c81b4fbf-fabe-4643-b675-7ee8bf905fde</string>
 	<key>ShowInterstitialInSecoundsEvery</key>
 	<string></string>
 	<key>RemoveAdsPurchaseId</key>
