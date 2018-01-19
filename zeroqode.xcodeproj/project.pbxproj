@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9082A0E95B745968AD3330F0 /* Pods_SuperView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5D3AD4CF5ABC76859E470 /* Pods_SuperView.framework */; };
 		CD22F7E71DAC1A2D00401E59 /* www in Resources */ = {isa = PBXBuildFile; fileRef = CD22F7E61DAC1A2D00401E59 /* www */; };
 		CD2A1D921E07295800261CDE /* NoInternet.html in Resources */ = {isa = PBXBuildFile; fileRef = CD2A1D911E07295800261CDE /* NoInternet.html */; };
 		CD479A6F1D7DAD160076BFCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD479A6E1D7DAD160076BFCE /* UIColorExtension.swift */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9082A0E95B745968AD3330F0 /* Pods_SuperView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
