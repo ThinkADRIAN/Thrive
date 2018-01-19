@@ -113,7 +113,7 @@ public extension UserDefaults {
     
     /// `NSNumber` representation of a user default
     
-    func numberForKey(_ key: String) -> NSNumber? {
+    @objc func numberForKey(_ key: String) -> NSNumber? {
         return object(forKey: key) as? NSNumber
     }
     
@@ -125,7 +125,7 @@ public extension UserDefaults {
     
     /// Sets value for `key`
     
-    public subscript(key: String) -> Any? {
+    @objc public subscript(key: String) -> Any? {
         get {
             // return untyped Proxy
             // (make sure we don't fall into infinite loop)
@@ -153,13 +153,13 @@ public extension UserDefaults {
     
     /// Returns `true` if `key` exists
     
-    public func hasKey(_ key: String) -> Bool {
+    @objc public func hasKey(_ key: String) -> Bool {
         return object(forKey: key) != nil
     }
     
     /// Removes value for `key`
     
-    public func remove(_ key: String) {
+    @objc public func remove(_ key: String) {
         removeObject(forKey: key)
     }
     
@@ -168,7 +168,7 @@ public extension UserDefaults {
     /// - Note: This method only removes keys on the receiver `UserDefaults` object.
     ///         System-defined keys will still be present afterwards.
     
-    public func removeAll() {
+    @objc public func removeAll() {
         for (key, _) in dictionaryRepresentation() {
             removeObject(forKey: key)
         }

@@ -47,10 +47,10 @@ class InAppProductQueryRequest: NSObject, InAppProductRequest, SKProductsRequest
         request.delegate = self
     }
 
-    func start() {
+    @objc func start() {
         request.start()
     }
-    func cancel() {
+    @objc func cancel() {
         request.cancel()
     }
 

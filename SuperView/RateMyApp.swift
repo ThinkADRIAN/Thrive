@@ -40,21 +40,21 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
     fileprivate var reviewURLiOS7 = "itms-apps://itunes.apple.com/app/id"
     
     
-    var promptAfterDays:Double = 30
-    var promptAfterUses = 10
-    var promptAfterCustomEventsCount = 10
-    var daysBeforeReminding:Double = 1
+    @objc var promptAfterDays:Double = 30
+    @objc var promptAfterUses = 10
+    @objc var promptAfterCustomEventsCount = 10
+    @objc var daysBeforeReminding:Double = 1
     
-    var alertTitle = NSLocalizedString("Rate the app", comment: "RateMyApp")
-    var alertMessage = ""
-    var alertOKTitle = NSLocalizedString("Rate it now", comment: "RateMyApp")
-    var alertCancelTitle = NSLocalizedString("Don't bother me again", comment: "RateMyApp")
-    var alertRemindLaterTitle = NSLocalizedString("Remind me later", comment: "RateMyApp")
-    var appID = ""
+    @objc var alertTitle = NSLocalizedString("Rate the app", comment: "RateMyApp")
+    @objc var alertMessage = ""
+    @objc var alertOKTitle = NSLocalizedString("Rate it now", comment: "RateMyApp")
+    @objc var alertCancelTitle = NSLocalizedString("Don't bother me again", comment: "RateMyApp")
+    @objc var alertRemindLaterTitle = NSLocalizedString("Remind me later", comment: "RateMyApp")
+    @objc var appID = ""
 	
-	var debug = false
+	@objc var debug = false
     
-    class var sharedInstance : RateMyApp {
+    @objc class var sharedInstance : RateMyApp {
     struct Static {
         static let instance : RateMyApp = RateMyApp()
         }
@@ -91,13 +91,13 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
         
     }
     
-    func trackEventUsage(){
+    @objc func trackEventUsage(){
         
         incrementValueForKey(name: kSpecialEventCount)
         
     }
     
-    func trackAppUsage(){
+    @objc func trackAppUsage(){
         
         incrementValueForKey(name: kAppUseCount)
         
@@ -209,7 +209,7 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
     }
     
     
-    public func showRatingAlert(){
+    @objc public func showRatingAlert(){
         
         let infoDocs : NSDictionary = Bundle.main.infoDictionary! as NSDictionary
         let appname : NSString = infoDocs.object(forKey: "CFBundleName") as! NSString

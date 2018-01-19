@@ -19,8 +19,22 @@
 		CD999E1C1D95478F009AF731 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD999E1B1D95478F009AF731 /* Launch Screen.storyboard */; };
 		CDBE24E31D800D52007B9363 /* domains.json in Resources */ = {isa = PBXBuildFile; fileRef = CDBE24E21D800D52007B9363 /* domains.json */; };
 		CDCD81701F58956E0063FF11 /* RateMyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD816F1F58956E0063FF11 /* RateMyApp.swift */; };
-		EACDB836501E8DC0573A4BE7 /* Pods_SuperView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5D3AD4CF5ABC76859E470 /* Pods_SuperView.framework */; };
+		F3FDB5FB20121AE400956EAD /* Pods_SuperView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5D3AD4CF5ABC76859E470 /* Pods_SuperView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F3FDB5FC20121AE400956EAD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F3FDB5FB20121AE400956EAD /* Pods_SuperView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6FB41A02A45CA3294D09AF1A /* Pods-SuperView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperView/Pods-SuperView.release.xcconfig"; sourceTree = "<group>"; };
@@ -49,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EACDB836501E8DC0573A4BE7 /* Pods_SuperView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +139,7 @@
 				CD6A99C91D5B1B8600E25A08 /* Resources */,
 				DB65B082F3B06527E81C52ED /* [CP] Embed Pods Frameworks */,
 				EB6C43668B1D0879C7DAE97C /* [CP] Copy Pods Resources */,
+				F3FDB5FC20121AE400956EAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,7 +163,7 @@
 					CD6A99CA1D5B1B8600E25A08 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 9CX88Y878K;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -282,6 +296,7 @@
 		CD6A99DB1D5B1B8600E25A08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -336,6 +351,7 @@
 		CD6A99DC1D5B1B8600E25A08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -398,7 +414,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SuperView/UniversalWebView-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -419,7 +435,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SuperView/UniversalWebView-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

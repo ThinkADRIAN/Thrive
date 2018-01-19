@@ -51,7 +51,7 @@ public extension SWColor {
      - parameter hexString: The hex string, with or without the hash character.
      - returns: A color with the given hex string.
      */
-    public convenience init?(hexString: String) {
+    @objc public convenience init?(hexString: String) {
         self.init(hexString: hexString, alpha: 1.0)
     }
     
@@ -74,7 +74,7 @@ public extension SWColor {
      - parameter alpha: The alpha value, a floating value between 0 and 1.
      - returns: A color with the given hex string and alpha.
      */
-    public convenience init?(hexString: String, alpha: Float) {
+    @objc public convenience init?(hexString: String, alpha: Float) {
         var hex = hexString
         
         // Check for hash and remove the hash
@@ -108,7 +108,7 @@ public extension SWColor {
      - parameter hex: The hex value. For example: 0xff8942 (no quotation).
      - returns: A color with the given hex value
      */
-    public convenience init?(hex: Int) {
+    @objc public convenience init?(hex: Int) {
         self.init(hex: hex, alpha: 1.0)
     }
     
@@ -119,7 +119,7 @@ public extension SWColor {
      - parameter alpha: The alpha value, a floating value between 0 and 1.
      - returns: color with the given hex value and alpha
      */
-    public convenience init?(hex: Int, alpha: Float) {
+    @objc public convenience init?(hex: Int, alpha: Float) {
         if (0x000000 ... 0xFFFFFF) ~= hex {
             self.init(hex6: hex , alpha: alpha)
         } else {

@@ -42,7 +42,7 @@ class InAppReceiptRefreshRequest: NSObject, SKRequestDelegate {
         return request
     }
 
-    let refreshReceiptRequest: SKReceiptRefreshRequest
+    @objc let refreshReceiptRequest: SKReceiptRefreshRequest
     let callback: RequestCallback
 
     deinit {
@@ -56,7 +56,7 @@ class InAppReceiptRefreshRequest: NSObject, SKRequestDelegate {
         self.refreshReceiptRequest.delegate = self
     }
 
-    func start() {
+    @objc func start() {
         self.refreshReceiptRequest.start()
     }
 

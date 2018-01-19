@@ -27,7 +27,7 @@ import StoreKit
 
 public extension SKProduct {
 
-    public var localizedPrice: String? {
+    @objc public var localizedPrice: String? {
         return priceFormatter(locale: priceLocale).string(from: price)
     }
     

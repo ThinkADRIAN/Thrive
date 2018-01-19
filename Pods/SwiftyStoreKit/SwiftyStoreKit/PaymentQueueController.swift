@@ -151,7 +151,7 @@ class PaymentQueueController: NSObject, SKPaymentTransactionObserver {
         paymentQueue.finishTransaction(skTransaction)
     }
     
-    var shouldAddStorePaymentHandler: ShouldAddStorePaymentHandler?
+    @objc var shouldAddStorePaymentHandler: ShouldAddStorePaymentHandler?
 
     // MARK: SKPaymentTransactionObserver
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {

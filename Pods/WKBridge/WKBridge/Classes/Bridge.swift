@@ -12,7 +12,7 @@ import WebKit
 /// Bridge for WKWebView and JavaScript
 open class Bridge: NSObject {
     
-    static let name: String = "pacific"
+    @objc static let name: String = "pacific"
     
     fileprivate static let callbackEventName = "PacificDidReceiveNativeCallback"
     fileprivate static let postEventName = "PacificDidReceiveNativeBroadcast"
@@ -62,7 +62,7 @@ open class Bridge: NSObject {
     fileprivate weak var webView: WKWebView?
     
     /// Print message body from webpage automatically.
-    public var printScriptMessageAutomatically = false
+    @objc public var printScriptMessageAutomatically = false
     
     deinit {
         configuration.removeObserver(self, forKeyPath: #keyPath(WKWebViewConfiguration.userContentController))
@@ -95,7 +95,7 @@ open class Bridge: NSObject {
     
     /// Unregister an action
     /// - Parameters action: name of action
-    public func unregister(for action: String) {
+    @objc public func unregister(for action: String) {
         handlers[action] = nil
     }
     
@@ -107,7 +107,7 @@ open class Bridge: NSObject {
     /// // listen native login action
     /// window.bridge.on('login', (parameters)=> {console.log('User Did Login')})
     /// ```
-    public func post(action: String, parameters: [String: Any]?) {
+    @objc public func post(action: String, parameters: [String: Any]?) {
         guard let webView = webView else { return }
         webView.st_dispatchBridgeEvent(Bridge.postEventName, parameters: ["name": action], results: .success(parameters), completionHandler: nil)
     }
@@ -115,7 +115,7 @@ open class Bridge: NSObject {
     /// Evaluates the given JavaScript string.
     /// - Parameter javaScriptString:  The JavaScript string to evaluate.
     /// - Parameter completion: A block to invoke when script evaluation completes or fails.
-    public func evaluate(_ javaScriptString: String, completion: ((Any?, Error?) -> Void)? = nil) {
+    @objc public func evaluate(_ javaScriptString: String, completion: ((Any?, Error?) -> Void)? = nil) {
         guard let webView = webView else { return }
         webView.evaluateJavaScript(javaScriptString, completionHandler: completion)
     }
@@ -169,7 +169,7 @@ public extension WKWebView {
     }
     
     /// Bridge for WKWebView and JavaScript. Initialize `lazy`
-    public var bridge: Bridge {
+    @objc public var bridge: Bridge {
         if let bridge = objc_getAssociatedObject(self, &STPrivateStatic.bridgeKey) as? Bridge {
             return bridge
         }
@@ -179,7 +179,7 @@ public extension WKWebView {
     }
     
     /// Remove Bridge And Reset, All the handlers will be removed
-    public func removeBridge() {
+    @objc public func removeBridge() {
         if let bridge = objc_getAssociatedObject(self, &STPrivateStatic.bridgeKey) as? Bridge {
             let userContentController = bridge.configuration.userContentController
             userContentController.removeScriptMessageHandler(forName: Bridge.name)

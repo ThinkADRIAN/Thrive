@@ -27,12 +27,12 @@ import Foundation
 
 class InAppReceiptVerificator: NSObject {
 
-    let appStoreReceiptURL: URL?
-    init(appStoreReceiptURL: URL? = Bundle.main.appStoreReceiptURL) {
+    @objc let appStoreReceiptURL: URL?
+    @objc init(appStoreReceiptURL: URL? = Bundle.main.appStoreReceiptURL) {
         self.appStoreReceiptURL = appStoreReceiptURL
     }
 
-    var appStoreReceiptData: Data? {
+    @objc var appStoreReceiptData: Data? {
         guard let receiptDataURL = appStoreReceiptURL,
             let data = try? Data(contentsOf: receiptDataURL) else {
             return nil

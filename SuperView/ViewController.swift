@@ -22,24 +22,24 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var progressBar: UIProgressView!
     
-    var bannerView: GADBannerView?
-    var toolbar:UIToolbar?
-    var backButton: UIBarButtonItem?
-    var forwardButton: UIBarButtonItem?
-    var iapButton: UIBarButtonItem?
-    var reloadButton: UIBarButtonItem?
+    @objc var bannerView: GADBannerView?
+    @objc var toolbar:UIToolbar?
+    @objc var backButton: UIBarButtonItem?
+    @objc var forwardButton: UIBarButtonItem?
+    @objc var iapButton: UIBarButtonItem?
+    @objc var reloadButton: UIBarButtonItem?
     
-    var mainURL:URL?
-    var wkWebView: WKWebView?
-    var popViewController:UIViewController?
-    var load : MBProgressHUD = MBProgressHUD()
-    var interstitial: GADInterstitial!
-    let request = GADRequest()
+    @objc var mainURL:URL?
+    @objc var wkWebView: WKWebView?
+    @objc var popViewController:UIViewController?
+    @objc var load : MBProgressHUD = MBProgressHUD()
+    @objc var interstitial: GADInterstitial!
+    @objc let request = GADRequest()
     
-    var timer:Timer?
+    @objc var timer:Timer?
     var showInterstitialInSecoundsEvery:Int! = 60
-    var count:Int = 60
-    var interstitialShownForFirstTime = false
+    @objc var count:Int = 60
+    @objc var interstitialShownForFirstTime = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,33 +63,33 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func showLoader() {
+    @objc func showLoader() {
         if self.backgroundImage == nil {
             self.load = MBProgressHUD.showAdded(to: self.view, animated: true)
             self.load.mode = MBProgressHUDMode.indeterminate
         }
     }
     
-    func loadToolbar() {
+    @objc func loadToolbar() {
         self.toolbar = self.getToolbar()
         self.backButton?.isEnabled = false
         self.forwardButton?.isEnabled = false
     }
     
-    func back() {
+    @objc func back() {
         _ = self.wkWebView?.goBack()
     }
     
-    func forward() {
+    @objc func forward() {
         _ = self.wkWebView?.goForward()
     }
     
-    func pullToRefresh(_ sender: UIRefreshControl?) {
+    @objc func pullToRefresh(_ sender: UIRefreshControl?) {
         self.reload()
         sender?.endRefreshing()
     }
     
-    func reload() {
+    @objc func reload() {
         if var urlForWebView = self.wkWebView?.url {
             if urlForWebView.absoluteString.contains("NoInternet.html") {
                 let appData = NSDictionary(contentsOfFile: AppDelegate.dataPath())
@@ -105,12 +105,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func loadWebView() {
+    @objc func loadWebView() {
         self.getURL()
         self.loadWebSite()
     }
     
-    func getURL() {
+    @objc func getURL() {
         if let storedURL = UserDefaults.standard.string(forKey: "URL") {
             self.mainURL = URL(string: storedURL)
         }
@@ -128,7 +128,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
 
     }
     
-    func loadWebSite() {
+    @objc func loadWebSite() {
         let theConfiguration:WKWebViewConfiguration? = WKWebViewConfiguration()
         let thisPref:WKPreferences = WKPreferences()
         thisPref.javaScriptCanOpenWindowsAutomatically = true;
@@ -234,7 +234,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }, for: "rate_app")
     }
     
-    func fileURLForBuggyWKWebView8(fileURL: URL) throws -> URL {
+    @objc func fileURLForBuggyWKWebView8(fileURL: URL) throws -> URL {
         // Some safety checks
         if !fileURL.isFileURL {
             throw NSError(
@@ -273,7 +273,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func loadInterstitalAd() {
+    @objc func loadInterstitalAd() {
         if Defaults[.adsPurchased] == false {
             let appData = NSDictionary(contentsOfFile: AppDelegate.dataPath())
             if let interstitialId = appData?.value(forKey: "AdMobInterstitialUnitId") as? String {
@@ -287,7 +287,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func counterForInterstitialAd() {
+    @objc func counterForInterstitialAd() {
         if(self.interstitialShownForFirstTime == true && self.count > 0) {
             self.count = self.count - 1
             print("COUNTER FOR INTERSTITIAL AD: \(self.count)")
@@ -297,7 +297,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func showInterstitialAd() {
+    @objc func showInterstitialAd() {
         if self.interstitialShownForFirstTime == true && self.count == self.showInterstitialInSecoundsEvery {
             if self.interstitial != nil && self.interstitial.isReady {
                 self.interstitial.present(fromRootViewController: self)
@@ -321,7 +321,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
     
-    func loadBannerAd(){
+    @objc func loadBannerAd(){
         if Defaults[.adsPurchased] == false {
             let appData = NSDictionary(contentsOfFile: AppDelegate.dataPath())
             if let bannerId = appData?.value(forKey: "AdMobBannerUnitId") as? String {
@@ -350,7 +350,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         self.didFinish()
     }
     
-    func didFinish() {
+    @objc func didFinish() {
         self.backgroundImage?.removeFromSuperview()
         self.backgroundImage = nil
         self.activityIndicator.stopAnimating()
@@ -389,7 +389,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func getViewController(_ configuration:WKWebViewConfiguration) -> UIViewController {
+    @objc func getViewController(_ configuration:WKWebViewConfiguration) -> UIViewController {
         let webView:WKWebView = WKWebView(frame: self.view.frame, configuration: configuration)
 //        // [START add_handler]
 //        webView.configuration.userContentController.add(self, name: "firebase")
@@ -406,7 +406,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         return newViewController
     }
     
-    func dismissPopViewController(_ domain:String) {
+    @objc func dismissPopViewController(_ domain:String) {
         if self.mainURL != nil {
             let mainDomain = self.getDomainFromURL(self.mainURL!)
             if domain == mainDomain{
@@ -424,12 +424,12 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         return self.popViewController?.view as? WKWebView
     }
     
-    func dismissViewController() {
+    @objc func dismissViewController() {
         self.dismiss(animated: true, completion: nil)
         self.load.hide(animated: true)
     }
     
-    func userContentController(_ userContentController:WKUserContentController, message:WKScriptMessage) {
+    @objc func userContentController(_ userContentController:WKUserContentController, message:WKScriptMessage) {
         print(message)
     }
     
@@ -572,7 +572,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
      - parameter urlScheme: telpromt, sms, mailto
      - parameter additional_info: additional info related to urlScheme
      */
-    func openCustomApp(urlScheme:String, additional_info:String){
+    @objc func openCustomApp(urlScheme:String, additional_info:String){
         let url = "\(urlScheme)"+"\(additional_info)"
         if let requestUrl:NSURL = NSURL(string:url) {
             let application:UIApplication = UIApplication.shared
@@ -629,7 +629,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func getFrame() -> CGRect {
+    @objc func getFrame() -> CGRect {
         let bounds = UIScreen.main.bounds
         
         var height:CGFloat = bounds.height
@@ -644,7 +644,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         return  CGRect(x: 0, y: 0, width: bounds.width, height: height)
     }
     
-    func getToolbar() -> UIToolbar? {
+    @objc func getToolbar() -> UIToolbar? {
         var toolbar: UIToolbar?
         let appData = NSDictionary(contentsOfFile: AppDelegate.dataPath())
         if appData?.value(forKey: "Toolbar") as? Bool == true {
@@ -686,7 +686,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         return toolbar
     }
     
-    func removeAdsAction() {
+    @objc func removeAdsAction() {
         let appData = NSDictionary(contentsOfFile: AppDelegate.dataPath())
         if let productId = appData?.value(forKey: "RemoveAdsPurchaseId") as? String {
             if !productId.isEmpty {
@@ -724,7 +724,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func restorePurchases() {
+    @objc func restorePurchases() {
         let appData = NSDictionary(contentsOfFile: AppDelegate.dataPath())
         if let productId = appData?.value(forKey: "RemoveAdsPurchaseId") as? String {
             SwiftyStoreKit.restorePurchases() { results in
@@ -755,7 +755,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func purchase() {
+    @objc func purchase() {
         let appData = NSDictionary(contentsOfFile: AppDelegate.dataPath())
         if let productId = appData?.value(forKey: "RemoveAdsPurchaseId") as? String {
             if !productId.isEmpty {
@@ -787,7 +787,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func getDomainFromURL(_ url:URL?) -> String {
+    @objc func getDomainFromURL(_ url:URL?) -> String {
         var domain:String = ""
         let domains = self.domains()
         if url?.host != nil {
@@ -807,7 +807,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         return domain
     }
     
-    func removeAds() {
+    @objc func removeAds() {
         Defaults[.adsPurchased] = true
         
         self.timer?.invalidate()
@@ -837,7 +837,7 @@ class ViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, WKSc
         }
     }
     
-    func domains() -> NSArray {
+    @objc func domains() -> NSArray {
         if let url = Bundle.main.url(forResource: "domains", withExtension: "json") {
             if let data = try? Data(contentsOf: url) {
                 do {

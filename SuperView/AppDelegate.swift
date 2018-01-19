@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
    
     var window: UIWindow?
     
-    var googlePlistExists = false
+    @objc var googlePlistExists = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -173,7 +173,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-    func open(_ url: URL, options: [String : Any] = [:], completionHandler completion: ((Bool) -> Swift.Void)? = nil){
+    @objc func open(_ url: URL, options: [String : Any] = [:], completionHandler completion: ((Bool) -> Swift.Void)? = nil){
         print("APPDELEGATE: open url \(url) with completionHandler")
         
         self.openURL(url: url)
@@ -194,7 +194,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
-    func handleUserInfo(userInfo:[AnyHashable : Any]) {
+    @objc func handleUserInfo(userInfo:[AnyHashable : Any]) {
         if let custom = userInfo["custom"] as? [AnyHashable : Any] {
             if let url = custom["u"] as? String {
                 print("url: \(url)")
@@ -203,7 +203,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    func openURL(url:URL) {
+    @objc func openURL(url:URL) {
         var urlString = url.absoluteString
         let urlSeperated = urlString.components(separatedBy: "//")
         var parsedURLString:String? = nil
@@ -239,7 +239,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    static func dataPath() -> String {
+    @objc static func dataPath() -> String {
         return Bundle.main.path(forResource: "SuperView", ofType: "plist")!
     }
 }
