@@ -162,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CD6A99C61D5B1B8600E25A08 /* Build configuration list for PBXProject "zeroqode" */;
+			buildConfigurationList = CD6A99C61D5B1B8600E25A08 /* Build configuration list for PBXProject "Thrive" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -325,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -374,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -426,7 +426,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD6A99C61D5B1B8600E25A08 /* Build configuration list for PBXProject "zeroqode" */ = {
+		CD6A99C61D5B1B8600E25A08 /* Build configuration list for PBXProject "Thrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD6A99DB1D5B1B8600E25A08 /* Debug */,

@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SuperView.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:zeroqode.xcodeproj">
+      location = "group:/Users/adriancunanan/Desktop/***/Thrive/Zeroqode Ios &amp; Android/Zeroqode Ios/Product/SuperView/SuperView/SuperView/Thrive.xcodeproj">
    </FileRef>
 </Workspace>
