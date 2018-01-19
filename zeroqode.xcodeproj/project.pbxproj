@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9082A0E95B745968AD3330F0 /* Pods_SuperView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5D3AD4CF5ABC76859E470 /* Pods_SuperView.framework */; };
+		66747ECA665677C1E7A7961C /* Pods_SuperView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5D3AD4CF5ABC76859E470 /* Pods_SuperView.framework */; };
 		CD22F7E71DAC1A2D00401E59 /* www in Resources */ = {isa = PBXBuildFile; fileRef = CD22F7E61DAC1A2D00401E59 /* www */; };
 		CD2A1D921E07295800261CDE /* NoInternet.html in Resources */ = {isa = PBXBuildFile; fileRef = CD2A1D911E07295800261CDE /* NoInternet.html */; };
 		CD479A6F1D7DAD160076BFCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD479A6E1D7DAD160076BFCE /* UIColorExtension.swift */; };
@@ -20,22 +20,7 @@
 		CD999E1C1D95478F009AF731 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD999E1B1D95478F009AF731 /* Launch Screen.storyboard */; };
 		CDBE24E31D800D52007B9363 /* domains.json in Resources */ = {isa = PBXBuildFile; fileRef = CDBE24E21D800D52007B9363 /* domains.json */; };
 		CDCD81701F58956E0063FF11 /* RateMyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD816F1F58956E0063FF11 /* RateMyApp.swift */; };
-		F3FDB5FB20121AE400956EAD /* Pods_SuperView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D6D5D3AD4CF5ABC76859E470 /* Pods_SuperView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F3FDB5FC20121AE400956EAD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F3FDB5FB20121AE400956EAD /* Pods_SuperView.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6FB41A02A45CA3294D09AF1A /* Pods-SuperView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperView/Pods-SuperView.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9082A0E95B745968AD3330F0 /* Pods_SuperView.framework in Frameworks */,
+				66747ECA665677C1E7A7961C /* Pods_SuperView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +126,6 @@
 				CD6A99C91D5B1B8600E25A08 /* Resources */,
 				DB65B082F3B06527E81C52ED /* [CP] Embed Pods Frameworks */,
 				EB6C43668B1D0879C7DAE97C /* [CP] Copy Pods Resources */,
-				F3FDB5FC20121AE400956EAD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -403,7 +387,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 785471B36607239D8FD446A7 /* Pods-SuperView.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SuperView/SuperView.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -424,7 +407,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FB41A02A45CA3294D09AF1A /* Pods-SuperView.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SuperView/SuperView.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
